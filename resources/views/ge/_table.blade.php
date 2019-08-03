@@ -19,8 +19,7 @@
     </tr>
     @empty
     </table>
-    <br>the list is empty :c
-    <br><a href="{{route ('friend.create',[$ge]) }}">Add Friends</a>
+    <div class="p-3 mb-2 bg-danger text-white">the list is empty you should add people to play</div>
     @endforelse
     @else
     <br>Nothing for show

@@ -28,30 +28,29 @@
                             <input type="password" name="pass" required/></p>
                         <button type="submit">Unlock</button>
                     </form>
-                    @else
-
-                    <div class="form-row">
-                        <div class="col">
-                            <label class="label" for="title">Friend 1:</label>
-                            <input class="input" id="person1" type="text" name="person1" 
-                            placeholder="Name of the person" required>
-                        </div>
-                        <div class="col">
-                            <label class="label" for="description">Telephone:</label>
-                            <input class="input" id="telephone1" type="text" name="telephone1" 
-                            placeholder="Telephone of the person" required>
-                        </div>
-                        <div class="col">
-                            <br>
-                            <button type="button" class="btn btn-success">Add</button>
-                        </div>
-                    </div>
-
                     @endif
+                    @if($ge->organized)
                     <button type="button" class="btn btn-primary">Let's play</button>
-                </div>
+                    @endif
+                    
             </div>
         </div>
     </div>
 </div>
+<br>
+
+@if($ge->friends->isEmpty())
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                <div class="card-header">Add friends to: {{$ge->name}}</div>
+    
+            <friend-form>
+            </friend-form>
+                
+            </div>
+        </div>
+    </div>
+    @endif
 @endsection

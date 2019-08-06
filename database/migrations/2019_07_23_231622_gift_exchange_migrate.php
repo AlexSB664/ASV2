@@ -19,6 +19,7 @@ class GiftExchangeMigrate extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('name',100)->unique();
             $table->text('clave_privada');
+            $table->boolean('organized')->default(false);
             $table->timestamps();
         });
     }

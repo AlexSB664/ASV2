@@ -28,6 +28,9 @@
                             <input type="password" name="pass" required/></p>
                         <button type="submit">Unlock</button>
                     </form>
+                    @else
+                    <script>window.location = "{{ route('ge.empty',[$ge]) }}";</script>
+                    {{-- <friend-form></friend-form> --}}
                     @endif
                     @if($ge->organized)
                     <button type="button" class="btn btn-primary">Let's play</button>
@@ -38,19 +41,4 @@
     </div>
 </div>
 <br>
-
-@if($ge->friends->isEmpty())
-<div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                <div class="card-header">Add friends to: {{$ge->name}}</div>
-    
-            <friend-form>
-            </friend-form>
-                
-            </div>
-        </div>
-    </div>
-    @endif
 @endsection

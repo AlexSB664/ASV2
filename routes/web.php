@@ -18,6 +18,8 @@ Route::get('/', function () {
 Auth::routes(['verify' => true]);
 
 Route::post('/ge/unlock/{ge}', 'GiftExchangeController@unlock')->name('ge.unlock');
+Route::get('/ge/empty/{ge}', 'GiftExchangeController@empty')->name('ge.empty');
+
 Route::resource('ge', 'GiftExchangeController',[
     'except' => ['edit','update']
 ]);

@@ -4,6 +4,8 @@
         <th>Santa</th>
         <th>Telephone</th> 
         <th>Kid</th>
+        <th></th>
+        <th></th>
     </tr>
 
     @isset($ge)
@@ -18,6 +20,8 @@
         @endif
     </tr>
     @empty
+    {{-- vue component --}}
+    <tr is="friend-table"></tr>
     </table>
     <div class="p-3 mb-2 bg-danger text-white">the list is empty you should add people to play</div>
     @endforelse

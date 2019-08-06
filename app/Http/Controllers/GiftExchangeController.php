@@ -26,6 +26,12 @@ class GiftExchangeController extends Controller
         return view('ge.index', compact('GiftExchange'));
     }
 
+    public function empty(GiftExchange $ge){
+
+        return view('ge.empty', compact('ge'));
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      *
